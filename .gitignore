@@ -1,0 +1,41 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+.flattened-pom.xml
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Test Reports
+test-reports/
+build/
+
+# Screenshots
+screenshots/
+
+# Build
+out/
+bin/
+
+# OS
+Thumbs.db
+.classpath
+.project
+.settings/
+

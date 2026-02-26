@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Inventory Management Test Suite" parallel="false">
+    <test name="Login Tests">
+        <classes>
+            <!-- Add your test classes here -->
+        </classes>
+    </test>
+
+    <test name="Inventory Validation Tests">
+        <classes>
+            <!-- Add your test classes here -->
+        </classes>
+    </test>
+
+    <test name="Pricing and Cart Flow Tests">
+        <classes>
+            <!-- Add your test classes here -->
+        </classes>
+    </test>
+
+    <test name="Discount and Invoice Tests">
+        <classes>
+            <!-- Add your test classes here -->
+        </classes>
+    </test>
+</suite>
+
