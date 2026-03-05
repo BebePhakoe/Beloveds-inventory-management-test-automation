@@ -15,6 +15,7 @@ import java.time.Duration;
 public class loginPage {
 
     WebDriver driver;
+    inventoryPage inventory = new inventoryPage(driver);
     @Test
     public void validateLoginPageElements() {
 
