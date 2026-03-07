@@ -3,7 +3,7 @@ package Base;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import Utils.BrowserFactory; // This must match your Factory folder name
+import Utilities.BrowserFactory; // This must match your Factory folder name
 
 public class BaseTest {
 
@@ -19,11 +19,5 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
 
-    @AfterMethod
-    public void tearDown() {
-        // This closes the browser after the test is done
-        if (driver != null) {
-            driver.quit();
+
         }
-    }
-}
