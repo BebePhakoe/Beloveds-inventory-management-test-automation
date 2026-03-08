@@ -3,21 +3,27 @@ package Base;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import Utilities.BrowserFactory; // This must match your Factory folder name
+import Utilities.BrowserFactory;
 
 public class BaseTest {
 
-    // We make this 'public' so your Login and Inventory pages can see it
+    // Public so other test classes can use it
     public WebDriver driver;
 
     @BeforeMethod
     public void setUp() {
-        // We call the 'getDriver' method from your Factory
-        // Make sure the word 'chrome' is in lowercase!
+
+        // Choose the browser here
         driver = BrowserFactory.getDriver("chrome");
 
         driver.manage().window().maximize();
     }
 
+    @AfterMethod
+    public void tearDown() {
 
+        if (driver != null) {
+            driver.quit(); // closes browser after each test
         }
+    }
+}

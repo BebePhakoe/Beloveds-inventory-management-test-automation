@@ -15,7 +15,7 @@ public class CheckOutPage {
     // Locators
     private final By expressShipping = By.xpath("//label[contains(., 'Express')]");
     private final By oneYearWarranty = By.xpath("//label[contains(., '1 Year')]");
-    private final By discountField = By.xpath("//input[@data-testid='discount-code']"); // changed from CSS to XPath
+    private final By discountField = By.xpath("//input[@data-testid='discount-code']");
     private final By applyButton = By.xpath("//button[text()='Apply']");
     private final By confirmPurchaseButton = By.xpath("//button[contains(text(), 'Confirm Purchase')]");
 
@@ -25,20 +25,20 @@ public class CheckOutPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    // Select shipping and warranty extras
+    //Step 11: Select shipping and warranty extras
     public void selectExtras() {
         wait.until(ExpectedConditions.elementToBeClickable(expressShipping)).click();
         wait.until(ExpectedConditions.elementToBeClickable(oneYearWarranty)).click();
     }
 
-    // Apply discount code (works with your loginTest call)
+    // Step 12: Apply discount code (works with your loginTest call)
     public void applyDiscount(String code) {
         // Change this line to wait for the input field itself
         WebElement input = wait.until(ExpectedConditions.visibilityOfElementLocated(discountField));
         input.clear();
         input.sendKeys(code);
 
-        // Then click apply
+        // Step 13 and 14: Then click apply
         driver.findElement(By.xpath("//button[text()='Apply']")).click();
     }
 
@@ -47,7 +47,7 @@ public class CheckOutPage {
         applyDiscount("SAVE10");
     }
 
-    // Confirm purchase
+    // Step 15: Confirm purchase
     public void clickConfirmPurchase() {
         wait.until(ExpectedConditions.elementToBeClickable(confirmPurchaseButton)).click();
     } // <-- removed trailing comma, fixes red errors

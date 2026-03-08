@@ -17,24 +17,22 @@ public class LearningMaterialsPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    // XPaths created from the <span> tags you provided
+    //Locators
     By userProfileName = By.xpath("//span[text()='bibi']");
     By learnDropdown = By.xpath("//span[text()='Learn']");
     By learningMaterialsOption = By.xpath("//span[text()='Learning Materials']");
     By webAutomationAdvanceHeader = By.xpath("//span[contains(text(),'Web Automation Advance')]");
 
     public void navigateToAdvanceSection() {
-        // --- CHOICE A: THE GATEKEEPER ---
-        // Identify an element that ONLY appears after a successful login
         wait.until(ExpectedConditions.visibilityOfElementLocated(userProfileName));
 
-        // 1. Now it is safe to click the 'Learn' span
+        // Now it's safe to interact with the dropdown
         wait.until(ExpectedConditions.elementToBeClickable(learnDropdown)).click();
 
-        // 2. Click the 'Learning Materials' span
+        // 3. Click the 'Learning Materials' span
         wait.until(ExpectedConditions.visibilityOfElementLocated(learningMaterialsOption)).click();
 
-        // 3. Click the target section
+        //  Wait for the 'Web Automation Advance' to be visible and clickable
         wait.until(ExpectedConditions.elementToBeClickable(webAutomationAdvanceHeader)).click();
     }
 

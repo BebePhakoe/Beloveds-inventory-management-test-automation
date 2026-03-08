@@ -18,11 +18,11 @@ public class InventoryPage {
         this.driver = driver;
     }
 
-    // Selectors
+    // Locators
     By selectColorDropdown = By.xpath("//select[@data-testid='color-select']");
     By blueOption = By.xpath("//option[@value='blue']");
 
-    // Step 3: Select Phone
+    // Step 6: Select Phone
     public void selectPhone() {
         Select dropdown = new Select(driver.findElement(By.xpath("//select[@id='deviceType']")));
         dropdown.selectByVisibleText("Phone");
@@ -33,7 +33,7 @@ public class InventoryPage {
         return driver.findElement(By.id("brand")).isEnabled();
     }
 
-    // Step 4: Select Apple
+    // Step 7:Select Apple
     public void selectApple() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement brandElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("brand")));
@@ -41,7 +41,7 @@ public class InventoryPage {
         dropdown.selectByVisibleText("Apple");
     }
 
-    // Step 5: Click 128GB
+    // Step 8:Click 128GB
     public void click128GB() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement storageRadio = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='storage-128GB']")));
@@ -50,14 +50,14 @@ public class InventoryPage {
         try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
     }
 
-    // Step 6: Select Blue color
+    // Step 9:Select Blue color
     public void selectBlueColor() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(selectColorDropdown)).click();
         wait.until(ExpectedConditions.elementToBeClickable(blueOption)).click();
     }
 
-    // Step 7: Set Quantity to 2
+    // Step 10:Set Quantity to two
     public void setQuantityToTwo() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement quantityInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='number']")));
@@ -66,7 +66,7 @@ public class InventoryPage {
         ((JavascriptExecutor) driver).executeScript("arguments[0].dispatchEvent(new Event('change'))", quantityInput);
     }
 
-    // Step 8: Input address and click next
+    // Step 11:Input address and click next
     public void enterAddressAndClickNext(String address) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement addressField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[placeholder='Enter address']")));
